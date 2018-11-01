@@ -7,9 +7,13 @@ public class SampleGameMain {
 	static Path AC = new Path("blue door", roomA, roomC);
 	static Path BC = new Path("green door", roomB, roomC);
 
+	static Game game;
+
 	public static void main(String[] args){
 		roomA.add(new Item("gold coin"));
 		roomB.add(new Item("silver coin"));
 		roomA.add(new Entity("red lever"));
+
+		game = new Game(roomA, new CreatureInventory());
 	}
 }

@@ -6,7 +6,7 @@ public class Path {
 	boolean accessible = true;
 
 	public Path(){
-		name = "";
+		this("");
 	}
 
 	public Path(String name) {
@@ -21,5 +21,9 @@ public class Path {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public boolean take(Game game){		// Takes in entire game state, PROBABLY A BAD IDEA!
+		return accessible;
 	}
 }
