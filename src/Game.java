@@ -7,6 +7,7 @@ public class Game {
 	boolean running;
 
 	public Game(Location start, Container inventory){
+		running = true;
 		location = start;
 		this.inventory = inventory;
 
@@ -18,15 +19,20 @@ public class Game {
 		runCommandLoop();
 	}
 
-	private void runCommandLoop(){
+	public void runCommandLoop(){
 		Scanner scan = new Scanner(System.in);
+		CommandParser parser = new CommandParser(this);
 		while(running){								// This is the command loop.
-			System.out.println(scan.nextLine());	// just gonna parrot input for now
+			parser.handle(scan.nextLine());
 		}
 	}
-	private void moveTo(Path path){
+	public void moveTo(Path path){
 		if(path.take(this)){	// Send the entire game state, probably a bad idea!!!
 			location = path.to;
+
+			for(Entity e : location.occupants){
+				System.out.println("You see " + e.getName());
+			}
 		}
 	}
 }

@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Location {
 
-	public ArrayList<Entity> occupants; // Anything within the location
+	public ArrayList<Entity> occupants = new ArrayList<>(); // Anything within the location
 
-	public ArrayList<Path> egresses; // Any location that can be directly traveled to from this location
+	public ArrayList<Path> egresses = new ArrayList<>(); // Any location that can be directly traveled to from this location
 
 	public ArrayList<Location> getNeighbors(){
 		ArrayList<Location> ret = new ArrayList<>();
