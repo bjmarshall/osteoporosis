@@ -1,11 +1,13 @@
+import java.util.Scanner;
+
 public class SampleGameMain {
 	static Location roomA = new Location();
 	static Location roomB = new Location();
 	static Location roomC = new Location();
 
-	static Path AB = new Path("red door", roomA, roomB);
-	static Path AC = new Path("blue door", roomA, roomC);
-	static Path BC = new Path("green door", roomB, roomC);
+	static Path AB = new Path("red_door", roomA, roomB);
+	static Path AC = new Path("blue_door", roomA, roomC);
+	static Path BC = new Path("green_door", roomB, roomC);
 
 	static Game game;
 
@@ -15,5 +17,6 @@ public class SampleGameMain {
 		roomA.add(new Entity("red lever"));
 
 		game = new Game(roomA, new CreatureInventory());
+		game.runCommandLoop();
 	}
 }
