@@ -17,4 +17,9 @@ public class Location {
 
 		return ret;
 	}
+
+	public void add(Entity e){
+		occupants.add(e);
+	}
+
 }
