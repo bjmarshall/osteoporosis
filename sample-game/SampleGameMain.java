@@ -16,6 +16,11 @@ public class SampleGameMain {
 		roomB.add(new Item("silver coin"));
 		roomA.add(new Entity("red lever"));
 
+		roomA.egresses.add(AB);
+		roomB.egresses.add(BC);
+		roomA.egresses.add(AC);
+
+
 		game = new Game(roomA, new CreatureInventory());
 		game.runCommandLoop();
 	}
