@@ -24,4 +24,9 @@ public class Game {
 			System.out.println(scan.nextLine());	// just gonna parrot input for now
 		}
 	}
+	private void moveTo(Path path){
+		if(path.take(this)){	// Send the entire game state, probably a bad idea!!!
+			location = path.to;
+		}
+	}
 }
